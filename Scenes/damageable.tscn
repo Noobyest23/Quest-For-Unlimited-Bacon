@@ -1,0 +1,94 @@
+[gd_scene load_steps=10 format=3 uid="uid://bbsfhdkde8i5c"]
+
+[ext_resource type="Script" path="res://Scripts/Damageable.gd" id="1_6qmaf"]
+
+[sub_resource type="Curve" id="Curve_h75hy"]
+_data = [Vector2(0, 0.296703), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_f78a8"]
+width = 32
+curve_x = SubResource("Curve_h75hy")
+
+[sub_resource type="Curve" id="Curve_77cxa"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_s8nnj"]
+width = 32
+curve_x = SubResource("Curve_77cxa")
+
+[sub_resource type="Curve" id="Curve_xm230"]
+
+[sub_resource type="Curve" id="Curve_ny4kx"]
+
+[sub_resource type="Curve" id="Curve_qof66"]
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_tuqk8"]
+width = 260
+curve_x = SubResource("Curve_xm230")
+curve_y = SubResource("Curve_ny4kx")
+curve_z = SubResource("Curve_qof66")
+
+[node name="Damageable" type="Node3D"]
+script = ExtResource("1_6qmaf")
+
+[node name="PlayerUIMode" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 29.0
+offset_top = 831.0
+offset_right = 69.0
+offset_bottom = 871.0
+
+[node name="Background" type="Panel" parent="PlayerUIMode"]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 40.0
+
+[node name="darkRedBar" type="TextureRect" parent="PlayerUIMode"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 247.0
+offset_bottom = 38.0
+texture = SubResource("CurveXYZTexture_f78a8")
+
+[node name="redBar" type="TextureRect" parent="PlayerUIMode"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 247.0
+offset_bottom = 38.0
+texture = SubResource("CurveXYZTexture_s8nnj")
+
+[node name="Label" type="Label" parent="PlayerUIMode"]
+layout_mode = 0
+offset_top = -21.0
+offset_right = 151.0
+offset_bottom = 2.0
+text = "MaxHealth / Health"
+
+[node name="FloatingMode" type="Node3D" parent="."]
+
+[node name="Background" type="Sprite3D" parent="FloatingMode"]
+transform = Transform3D(0.661995, 0, 0, 0, 26.2872, 0, 0, 0, 1, 0, 1.26916, 0)
+modulate = Color(1, 1, 1, 0.580392)
+billboard = 2
+texture = SubResource("CurveXYZTexture_tuqk8")
+
+[node name="darkRedBar" type="Sprite3D" parent="FloatingMode"]
+transform = Transform3D(0.661995, 0, 0, 0, 23.1424, 0, 0, 0, 1, 0, 1.26766, 0)
+modulate = Color(1, 1, 1, 0.678431)
+billboard = 2
+texture = SubResource("CurveXYZTexture_f78a8")
+
+[node name="redBat" type="Sprite3D" parent="FloatingMode"]
+transform = Transform3D(0.661995, 0, 0, 0, 23.1424, 0, 0, 0, 1, 0, 1.26766, 0)
+billboard = 2
+texture = SubResource("CurveXYZTexture_s8nnj")
+
+[node name="Label3D" type="Label3D" parent="FloatingMode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54202, 0)
+billboard = 2
+text = "Health"

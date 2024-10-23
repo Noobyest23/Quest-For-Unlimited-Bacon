@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://dntkd2qdgfaj3"]
+[gd_scene load_steps=16 format=3 uid="uid://dntkd2qdgfaj3"]
 
-[ext_resource type="PackedScene" uid="uid://7673fyj885xx" path="res://Scenes/Player.tscn" id="1_g27xp"]
+[ext_resource type="PackedScene" uid="uid://7673fyj885xx" path="res://Scenes/player/Player.tscn" id="1_g27xp"]
 [ext_resource type="Texture2D" uid="uid://bd4bblm7atfug" path="res://GLB Models/bricksbig.png" id="2_52xs6"]
 [ext_resource type="PackedScene" uid="uid://coqp4x6i40xac" path="res://Scenes/bacon_pickupable.tscn" id="2_jvw83"]
+[ext_resource type="PackedScene" uid="uid://bp050naahpfj5" path="res://Scenes/crate.tscn" id="4_d2h8c"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_m3gea"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -93,7 +94,7 @@ size = Vector3(6.0879, 2.46593, 0.473265)
 material = SubResource("StandardMaterial3D_onhoo")
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.80527, 3.85903, 0.104012)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.80527, 3.85903, 1.55529)
 use_collision = true
 collision_layer = 3
 collision_mask = 3
@@ -143,3 +144,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.10279, 0.0495517, 11.2837)
 
 [node name="BaconPickupable4" parent="." instance=ExtResource("2_jvw83")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1028, 0.0495517, 11.2837)
+
+[node name="Crate" parent="." instance=ExtResource("4_d2h8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.664472, -0.475656, 10.3265)

@@ -57,19 +57,3 @@ func _headBob(time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_HEIGHT
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_HEIGHT
 	return pos
-
-func _tilt(normal : Vector3):
-	var approach_dir = player.velocity.normalized()
-	
-	var dot_product = normal.dot(approach_dir)
-	
-	var tiltSide = WALL_TILT_AMOUNT
-	
-	# Flip wall forward if the player approaches from the opposite direction
-	if dot_product < 0:
-		tiltSide = -tiltSide
-	
-	
-	rotate(Vector3(0, 0, 1), tiltSide)
-	await player.endWallRun
-	rotate(Vector3(0, 0, 1), -tiltSide)

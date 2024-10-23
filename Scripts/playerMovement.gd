@@ -49,11 +49,6 @@ func _physics_process(delta):
 		if collider.get_collision_mask_value(2):
 			
 			
-			if not wallrunning:
-				velocity.x += direction.x * 4.0
-				velocity.z += direction.z * 4.0
-				wallrunning = true
-				camera._tilt(get_wall_normal())
 			
 			
 			wallRunTimer -= 0.02
@@ -73,26 +68,33 @@ func _physics_process(delta):
 			if dot_product < 0:
 				wall_forward = -wall_forward
 			
+			if not wallrunning:
+				velocity.x += direction.x * 4.0
+				velocity.z += direction.z * 4.0
+				wallrunning = true
+				
 			
 			#Same stuff as other movement But if the player jumps ignore it
-			#if direction and not Input.is_action_just_pressed("Jump"):
+			if direction and not Input.is_action_just_pressed("Jump"):
 				#velocity.x = lerp(velocity.x, direction.x * WALLRUN_SPEED, delta * 1.0)
 				#velocity.z = lerp(velocity.z, direction.z * WALLRUN_SPEED, delta * 1.0)
-				#velocity -= get_wall_normal() * 0
+				velocity -= get_wall_normal() * 1.0
 			
 			gravity = 0.0
 			#Vertical Movement on the wall
 			#
 			#If the wall run timer is 0 or less than stop the wall run and go down
-			if wallRunTimer <= 0 or direction.x == 0 and direction.z == 0:
+			if wallRunTimer <= 0 or direction.x == 0.0 and direction.z == 0.0:
 				gravity = 9.8
 				endWallRun.emit()
 			else: #lerp Velocity.y to 0 to stop the player from continuesly going up
 				velocity.y = lerp(velocity.y, 0.0, delta * 4.0)
+				rotation_degrees.z = lerp(rotation_degrees.z, sign(dot_product) * 25.0, delta * 4.0)
 	
 	elif sliding and is_on_floor():
-		velocity.x = lerp(velocity.x, direction.x * speed, delta * 3.0)
-		velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)
+		#velocity.x = lerp(velocity.x, direction.x * speed, delta * 3.0)
+		#velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)
+		pass
 	else:
 		#Not on the floor and not on the wall and not sliding
 		
@@ -104,7 +106,10 @@ func _physics_process(delta):
 			velocity.z = lerp(velocity.z, velocity.z + direction.z, delta * 5.0)
 		gravity = 9.8
 		wallRunTimer = 1.0
+		rotation_degrees.z = lerp(rotation_degrees.z, 0.0, delta * 4.0)
 	
+	if not wallrunning:
+		rotation_degrees.z = lerp(rotation_degrees.z, 0.0, delta * 4.0)
 	move_and_slide()
 
 func _input(event):

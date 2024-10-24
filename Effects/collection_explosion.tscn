@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://duug6pcpxjjl5"]
 
-[ext_resource type="Script" path="res://Scripts/collection_explosion.gd" id="1_1mlvb"]
+[ext_resource type="Script" path="res://Scripts/collection_explosion.gd" id="1_b8rb4"]
 
 [sub_resource type="Curve" id="Curve_m04v4"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -62,16 +62,18 @@ amount = 16
 lifetime = 0.5
 one_shot = true
 explosiveness = 1.0
+fixed_fps = 60
 trail_lifetime = 0.69
 process_material = SubResource("ParticleProcessMaterial_2gjs8")
 draw_pass_1 = SubResource("CylinderMesh_1k5bx")
-script = ExtResource("1_1mlvb")
+script = ExtResource("1_b8rb4")
 
 [node name="Smoke" type="GPUParticles3D" parent="."]
 emitting = false
 amount = 16
 lifetime = 0.5
 explosiveness = 1.0
+fixed_fps = 60
 trail_lifetime = 0.69
 process_material = SubResource("ParticleProcessMaterial_djeuw")
 draw_pass_1 = SubResource("SphereMesh_3p5tc")

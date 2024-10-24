@@ -94,6 +94,7 @@ radius = 0.194714
 height = 1.41055
 
 [node name="Player" type="CharacterBody3D"]
+floor_max_angle = 0.767945
 script = ExtResource("1_vxgf0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -109,11 +110,11 @@ mesh = SubResource("BoxMesh_kpyab")
 [node name="Camera3D" type="Camera3D" parent="MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.420569, 0)
 cull_mask = 1048573
-fov = 90.0
+fov = 37.8493
 script = ExtResource("1_qvgn8")
 
 [node name="Sword" parent="MeshInstance3D/Camera3D" instance=ExtResource("4_2pcc7")]
-transform = Transform3D(-0.150681, 0.961482, 0.229885, 0.987718, 0.156145, -0.00565702, -0.0413344, 0.226209, -0.973202, 0, 0, 0)
+transform = Transform3D(-0.150681, 0.961482, 0.229885, 0.987719, 0.156145, -0.00565703, -0.0413344, 0.226209, -0.973203, 0, 0, 0)
 
 [node name="Cylinder_003" parent="MeshInstance3D/Camera3D/Sword/swordblend/Armature/Skeleton3D/Cylinder_003" index="0"]
 material_override = ExtResource("5_xpy3w")

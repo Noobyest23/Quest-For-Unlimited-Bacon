@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cupa00eyv4ror"]
+
+[ext_resource type="Texture2D" uid="uid://bk01ldks6jgk7" path="res://GLB Models/Sword/swordblend_ImphenziaPalette01.png" id="1_n67jg"]
+
+[resource]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_n67jg")
+roughness = 0.154545
+texture_filter = 2

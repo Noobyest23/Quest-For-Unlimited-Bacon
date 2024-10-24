@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bp050naahpfj5"]
+[gd_scene load_steps=9 format=3 uid="uid://bp050naahpfj5"]
 
 [ext_resource type="Texture2D" uid="uid://dreqbc7btqlmo" path="res://GLB Models/Crate/Crate_d5j02qc-83476fdc-715d-4952-9d2a-3e2da843b961.jpg" id="1_r3dml"]
 [ext_resource type="PackedScene" uid="uid://bbsfhdkde8i5c" path="res://Scenes/damageable.tscn" id="2_virdg"]
+[ext_resource type="PackedScene" uid="uid://bwye73dakhhvf" path="res://Effects/crateExplodeEffect.tscn" id="3_wdi6m"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_btbtx"]
 
@@ -48,7 +49,7 @@ shadow_mesh = SubResource("ArrayMesh_cmjpc")
 [sub_resource type="BoxShape3D" id="BoxShape3D_kfkk4"]
 size = Vector3(2.07222, 2.08838, 2.1051)
 
-[node name="RigidBody3D" type="RigidBody3D"]
+[node name="Crate" type="RigidBody3D"]
 mass = 0.2
 physics_material_override = SubResource("PhysicsMaterial_btbtx")
 freeze_mode = 1
@@ -65,3 +66,4 @@ shape = SubResource("BoxShape3D_kfkk4")
 [node name="Damageable" parent="." instance=ExtResource("2_virdg")]
 transform = Transform3D(0.834139, 0, 0, 0, 0.834139, 0, 0, 0, 0.834139, 0, -0.555054, 0)
 maxHealth = 1.0
+customDeathEffect = ExtResource("3_wdi6m")

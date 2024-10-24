@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwye73dakhhvf"]
+
+[ext_resource type="Script" path="res://Scripts/deathEffectAuto.gd" id="1_lhusm"]
+
+[sub_resource type="Curve" id="Curve_1tvqp"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_odn7e"]
+curve = SubResource("Curve_1tvqp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5v64r"]
+direction = Vector3(0, 1, 0)
+spread = 49.338
+initial_velocity_min = 3.0
+initial_velocity_max = 4.0
+scale_curve = SubResource("CurveTexture_odn7e")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_231a8"]
+albedo_color = Color(0.484581, 0.197885, 0.14296, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_32k7v"]
+material = SubResource("StandardMaterial3D_231a8")
+size = Vector3(0.3, 0.3, 0.3)
+
+[node name="GPUParticles3D" type="GPUParticles3D"]
+emitting = false
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_5v64r")
+draw_pass_1 = SubResource("BoxMesh_32k7v")
+script = ExtResource("1_lhusm")

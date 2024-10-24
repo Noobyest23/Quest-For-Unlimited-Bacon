@@ -1,6 +1,6 @@
 extends Node3D
 
-const explodeParticles = preload("res://Scenes/collection_explosion.tscn")
+const explodeParticles = preload("res://Effects/collection_explosion.tscn")
 @onready var player : playerClass = get_parent().get_child(0)
 
 func _on_area_3d_body_entered(body):

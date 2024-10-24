@@ -3,6 +3,7 @@ extends Node3D
 class_name Damageable
 
 @export var maxHealth : float
+@export var customDeathEffect : PackedScene
 @export_enum("PlayerUI", "Floating", "BossBar", "None") var HealthBarType : int = 1
 
 var redPart = null
@@ -10,6 +11,8 @@ var darkRedPart = null
 var healthLabel = null
 
 var health : float = 0.0
+
+@onready var parent = get_parent()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -42,6 +45,12 @@ func _updateHealthBar():
 	var barSize : float = percantage * maxSize
 	var redTween = create_tween()
 	var darkRedTween = create_tween()
+	
+	if barSize < 32:
+		redPart.visible = false
+		darkRedPart.visible = false
+		return
+	
 	if redPart is TextureRect:
 		redTween.tween_property(redPart, "size", Vector2(barSize, 36), 0.2)
 		darkRedTween.tween_property(darkRedPart, "size", Vector2(barSize, 36), 0.4)
@@ -52,11 +61,18 @@ func _updateHealthBar():
 func _damage(damage : float):
 	health -= damage
 	health = clamp(health, 0, maxHealth)
+	
+	if health <= 0:
+		_death()
+	
 	_updateHealthBar()
 
-func _input(event):
-	if event is InputEventKey:
-		if event.keycode == KEY_Q:
-			_damage(1.0)
-		elif event.keycode == KEY_E:
-			_damage(-1.0)
+func _death():
+	if customDeathEffect:
+		var inst = customDeathEffect.instantiate()
+		parent.add_child(inst)
+	
+	if not parent is playerClass:
+		parent.queue_free()
+	else:
+		get_tree().reload_current_scene()

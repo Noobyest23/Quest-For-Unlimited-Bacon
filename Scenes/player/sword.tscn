@@ -83,18 +83,19 @@ shadow_mesh = SubResource("ArrayMesh_ihgef")
 
 [sub_resource type="Animation" id="Animation_ivo1j"]
 resource_name = "Idle"
+length = 2.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0.564, -0.309, -0.482)]
+"values": [Vector3(0.564, -0.309, -0.482), Vector3(0.564, -0.359318, -0.482), Vector3(0.564, -0.309, -0.482)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -164,19 +165,45 @@ tracks/1/keys = {
 "values": [Vector3(0.564, -0.309, -0.482), Vector3(1.084, -0.189, -0.482), Vector3(0.462446, -0.189, -0.932228), Vector3(-0.321, -0.189, -0.45), Vector3(-0.501, -0.189, -0.45)]
 }
 
+[sub_resource type="Animation" id="Animation_6pc16"]
+resource_name = "block"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.245747, -0.204456, -0.482), Vector3(0.245747, -0.223541, -0.482), Vector3(0.245747, -0.204456, -0.482)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:quaternion")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Quaternion(0.234579, -0.691427, 0.411904, 0.545194)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p3hh8"]
 _data = {
 "Idle": SubResource("Animation_ivo1j"),
 "RESET": SubResource("Animation_4cgyg"),
-"Slash": SubResource("Animation_k7bag")
+"Slash": SubResource("Animation_k7bag"),
+"block": SubResource("Animation_6pc16")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sj002"]
 size = Vector3(0.0710449, 1.07618, 0.234493)
-
-[sub_resource type="Curve" id="Curve_ot5lt"]
-_data = [Vector2(0, 0.967033), 0.0, 0.0, 0, 0, Vector2(0.421053, 0.252747), -1.39194, -1.39194, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
 
 [node name="Sword" type="Node3D"]
 transform = Transform3D(-0.150681, 0.961482, 0.229884, 0.987718, 0.156145, -0.00565701, -0.0413344, 0.226209, -0.973201, 0, 0, 0)
@@ -184,7 +211,7 @@ rotation_edit_mode = 1
 script = ExtResource("1_ntdgf")
 
 [node name="swordblend" parent="." instance=ExtResource("2_dagpt")]
-transform = Transform3D(0.3, -5.82077e-09, 0, -5.82077e-09, 0.3, 0, 0, -7.45058e-09, 0.3, 0, 0, 0)
+transform = Transform3D(0.3, -7.68341e-09, 1.86265e-09, -6.51926e-09, 0.3, -7.45058e-09, -9.31323e-10, -7.45058e-09, 0.3, 0, 0, 0)
 rotation_edit_mode = 1
 
 [node name="Skeleton3D" parent="swordblend/Armature" index="0"]
@@ -250,24 +277,21 @@ transform = Transform3D(1, 0, 0, 0, 0.788873, 0, 0, 0, 0.923995, 0, -0.714363, 0
 libraries = {
 "": SubResource("AnimationLibrary_p3hh8")
 }
+playback_default_blend_time = 0.1
 
 [node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(1, -7.45058e-09, 0, 0, 1, 2.98023e-08, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(0.122375, 0.93152, -0.342484, 0.992088, -0.124567, 0.0156794, -0.0280564, -0.341693, -0.939393, 0.0406262, -1.03548, -0.275291)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, -7.91624e-07, 2.98023e-08, -3.04542e-07, 1, 5.51343e-07, 3.61353e-07, 2.68221e-07, 1, -0.00598219, 0.664943, 0.00205407)
+transform = Transform3D(0.122375, 0.992087, -0.0280558, 0.93152, -0.124568, -0.341692, -0.342484, 0.0156792, -0.939393, 1.67348, -0.349999, -0.217911)
 shape = SubResource("BoxShape3D_sj002")
-
-[node name="TrailEmitter" type="TrailEmitter" parent="."]
-material = ExtResource("3_tryud")
-curve = SubResource("Curve_ot5lt")
-geometry_nodepath = NodePath("../Trail")
-num_points = 10
-size = 0.05
-transform = Transform3D(1, -1.67638e-08, 0, -6.51926e-09, 1, 1.49012e-08, 3.72529e-09, -1.49012e-08, 1, 0, 0, 0)
 
 [node name="Trail" type="Node3D" parent="."]
 transform = Transform3D(1, -4.28408e-08, -7.45058e-09, 4.09782e-08, 1, 2.08616e-07, 2.23517e-08, -1.63913e-07, 1, 0.0193798, 0.878374, 0.0202763)
+
+[node name="Parry_timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 

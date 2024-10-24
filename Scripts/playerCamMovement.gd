@@ -43,14 +43,10 @@ func _process(delta):
 		transform.origin = _headBob(t_bob)
 	
 	#FOV change
-	var velocity_clamped = clamp(player.velocity.length(), 0.5, player.WALLRUN_SPEED * 2)
 	var target_fov = defaultFOV + FOV_CHANGE * player.velocity.length()
 	
 	fov = lerp(fov, target_fov, delta * 8.0)
 	
-	#WallRun Tilt
-	if player.is_on_wall_only():
-		var wallNormal = player.get_wall_normal()
 
 func _headBob(time) -> Vector3:
 	var pos = Vector3.ZERO

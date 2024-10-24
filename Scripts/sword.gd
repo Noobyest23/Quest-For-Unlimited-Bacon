@@ -53,7 +53,7 @@ func _on_area_3d_body_entered(body):
 		return
 	if body.has_node("Damageable") and isAttacking:
 		body.get_node("Damageable")._damage(damage)
-		_impact(0.04, 0.4)
+		_impact(0.05, 0.4)
 		var inst = particles.instantiate()
 		body.add_child(inst)
 		if body is RigidBody3D:
@@ -61,16 +61,11 @@ func _on_area_3d_body_entered(body):
 	#Destroy Projectiles if blocking
 	if isBlocking and not parryTimer.is_stopped():
 		body.queue_free()
-		_impact(0.04, 0.5)
+		_impact(0.05, 0.5)
 	elif isBlocking:
 		body.queue_free()
 
 func _impact(timeScale : float, duration : float):
-	if worldEnv:
-		worldEnv.environment.glow_bloom = 1.0
-		worldEnv.environment.glow_intensity = 1.4
-		worldEnv.environment.tonemap_mode = Environment.TONE_MAPPER_REINHARDT
-	
 	if anim_player.is_playing():
 		anim_player.pause()
 	Engine.time_scale = timeScale
@@ -78,7 +73,3 @@ func _impact(timeScale : float, duration : float):
 	Engine.time_scale = 1.0
 	
 	anim_player.play()
-	if worldEnv:
-		worldEnv.environment.glow_bloom = 0.5
-		worldEnv.environment.glow_intensity = 0.8
-		worldEnv.environment.tonemap_mode = Environment.TONE_MAPPER_FILMIC

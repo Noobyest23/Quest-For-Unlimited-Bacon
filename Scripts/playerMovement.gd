@@ -140,6 +140,11 @@ func _input(event):
 			_startSlide()
 		elif event.is_action_released("Crouch"):
 			_endCrouch()
+		elif event.is_action_pressed("Equip Sword"):
+			if get_node("MeshInstance3D/Camera3D/Sword"):
+				var v = $MeshInstance3D/Camera3D/Sword.visible
+				
+				$MeshInstance3D/Camera3D/Sword.visible = not v
 
 func _startCrouch() -> void:
 	if is_on_floor():

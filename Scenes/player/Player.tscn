@@ -8,7 +8,7 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_t3hn0"]
 radius = 0.195
-height = 1.411
+height = 2.038
 
 [sub_resource type="BoxMesh" id="BoxMesh_kpyab"]
 
@@ -91,7 +91,7 @@ shadow_mesh = SubResource("ArrayMesh_vumv2")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t6klo"]
 radius = 0.194714
-height = 1.41055
+height = 2.03847
 
 [node name="Player" type="CharacterBody3D"]
 floor_max_angle = 0.767945
@@ -103,12 +103,12 @@ layers = 2
 mesh = SubResource("CapsuleMesh_t3hn0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
-transform = Transform3D(0.314565, 0, 0, 0, 0.10404, 0, 0, 0, 0.136583, 0, 0.44129, -0.175336)
+transform = Transform3D(0.314565, 0, 0, 0, 0.10404, 0, 0, 0, 0.136583, 0, 0.84129, -0.175336)
 layers = 2
 mesh = SubResource("BoxMesh_kpyab")
 
 [node name="Camera3D" type="Camera3D" parent="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.420569, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.820569, 0)
 cull_mask = 1048573
 fov = 37.8493
 script = ExtResource("1_qvgn8")

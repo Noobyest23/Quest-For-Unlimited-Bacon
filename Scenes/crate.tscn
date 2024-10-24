@@ -64,6 +64,6 @@ transform = Transform3D(0.278498, 0, 0, 0, 0.278498, 0, 0, 0, 0.278498, 0.000421
 shape = SubResource("BoxShape3D_kfkk4")
 
 [node name="Damageable" parent="." instance=ExtResource("2_virdg")]
-transform = Transform3D(0.834139, 0, 0, 0, 0.834139, 0, 0, 0, 0.834139, 0, -0.555054, 0)
+transform = Transform3D(0.834139, 0, 0, 0, 0.834139, 0, 0, 0, 0.834139, 0, 0, 0)
 maxHealth = 1.0
 customDeathEffect = ExtResource("3_wdi6m")

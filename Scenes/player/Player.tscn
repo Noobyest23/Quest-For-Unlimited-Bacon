@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://7673fyj885xx"]
+[gd_scene load_steps=15 format=3 uid="uid://7673fyj885xx"]
 
 [ext_resource type="Script" path="res://Scripts/playerCamMovement.gd" id="1_qvgn8"]
 [ext_resource type="Script" path="res://Scripts/playerMovement.gd" id="1_vxgf0"]
 [ext_resource type="PackedScene" uid="uid://c0srd8cm5ainn" path="res://Scenes/player/sword.tscn" id="4_2pcc7"]
+[ext_resource type="PackedScene" uid="uid://ftkxu2e1u5iw" path="res://Scenes/player/deagle.tscn" id="5_32r0h"]
 [ext_resource type="PackedScene" uid="uid://bbsfhdkde8i5c" path="res://Scenes/damageable.tscn" id="5_prewj"]
 [ext_resource type="Material" uid="uid://b12egxkxv4pkn" path="res://Matierials/swordemision.tres" id="5_xpy3w"]
 
@@ -110,11 +111,12 @@ mesh = SubResource("BoxMesh_kpyab")
 [node name="Camera3D" type="Camera3D" parent="MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.820569, 0)
 cull_mask = 1048573
-fov = 37.8493
+fov = 91.0
 script = ExtResource("1_qvgn8")
 
 [node name="Sword" parent="MeshInstance3D/Camera3D" instance=ExtResource("4_2pcc7")]
 transform = Transform3D(-0.150681, 0.961482, 0.229885, 0.987719, 0.156145, -0.00565703, -0.0413344, 0.226209, -0.973203, 0, 0, 0)
+visible = false
 
 [node name="Cylinder_003" parent="MeshInstance3D/Camera3D/Sword/swordblend/Armature/Skeleton3D/Cylinder_003" index="0"]
 material_override = ExtResource("5_xpy3w")
@@ -127,6 +129,11 @@ mesh = SubResource("ArrayMesh_mqrrs")
 [node name="AnimationPlayer" parent="MeshInstance3D/Camera3D/Sword" index="1"]
 autoplay = "Idle"
 
+[node name="Deagle" parent="MeshInstance3D/Camera3D" instance=ExtResource("5_32r0h")]
+
+[node name="AnimationPlayer" parent="MeshInstance3D/Camera3D/Deagle" index="1"]
+autoplay = "Idle"
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.297735, 0)
 shape = SubResource("CapsuleShape3D_t6klo")
@@ -137,3 +144,5 @@ HealthBarType = 0
 
 [editable path="MeshInstance3D/Camera3D/Sword"]
 [editable path="MeshInstance3D/Camera3D/Sword/swordblend"]
+[editable path="MeshInstance3D/Camera3D/Deagle"]
+[editable path="MeshInstance3D/Camera3D/Deagle/deagle"]

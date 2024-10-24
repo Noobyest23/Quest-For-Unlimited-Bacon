@@ -70,25 +70,26 @@ offset_bottom = 2.0
 text = "MaxHealth / Health"
 
 [node name="FloatingMode" type="Node3D" parent="."]
+top_level = true
 
 [node name="Background" type="Sprite3D" parent="FloatingMode"]
-transform = Transform3D(0.661995, 0, 0, 0, 26.2872, 0, 0, 0, 1, 0, 1.26916, 0)
+transform = Transform3D(0.661995, 0, 0, 0, 26.2872, 0, 0, 0, 1, 0, 0, 0)
 modulate = Color(1, 1, 1, 0.580392)
 billboard = 2
 texture = SubResource("CurveXYZTexture_tuqk8")
 
 [node name="darkRedBar" type="Sprite3D" parent="FloatingMode"]
-transform = Transform3D(0.661995, 0, 0, 0, 23.1424, 0, 0, 0, 1, 0, 1.26766, 0)
+transform = Transform3D(0.661995, 0, 0, 0, 23.1424, 0, 0, 0, 1, 0, 0, 0)
 modulate = Color(1, 1, 1, 0.678431)
 billboard = 2
 texture = SubResource("CurveXYZTexture_f78a8")
 
 [node name="redBat" type="Sprite3D" parent="FloatingMode"]
-transform = Transform3D(0.661995, 0, 0, 0, 23.1424, 0, 0, 0, 1, 0, 1.26766, 0)
+transform = Transform3D(0.661995, 0, 0, 0, 23.1424, 0, 0, 0, 1, 0, 0, 0)
 billboard = 2
 texture = SubResource("CurveXYZTexture_s8nnj")
 
 [node name="Label3D" type="Label3D" parent="FloatingMode"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54202, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.312, 0)
 billboard = 2
 text = "Health"

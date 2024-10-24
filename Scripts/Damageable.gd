@@ -5,6 +5,9 @@ class_name Damageable
 @export var maxHealth : float
 @export var customDeathEffect : PackedScene
 @export_enum("PlayerUI", "Floating", "BossBar", "None") var HealthBarType : int = 1
+@export var floatingDist : float = 1.0
+
+var floating_handler = null
 
 var redPart = null
 var darkRedPart = null
@@ -28,7 +31,9 @@ func _ready():
 			redPart = $FloatingMode/redBat
 			darkRedPart = $FloatingMode/darkRedBar
 			healthLabel = $FloatingMode/Label3D
+			floating_handler = $FloatingMode
 			$PlayerUIMode.queue_free()
+	
 	
 	call_deferred("_updateHealthBar")
 
@@ -76,3 +81,9 @@ func _death():
 		parent.queue_free()
 	else:
 		get_tree().reload_current_scene()
+
+func _process(delta):
+	if HealthBarType == 1:
+		floating_handler.global_position.x = global_position.x
+		floating_handler.global_position.y = global_position.y + floatingDist
+		floating_handler.global_position.z = global_position.z

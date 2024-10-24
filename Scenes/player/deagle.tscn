@@ -1,0 +1,102 @@
+[gd_scene load_steps=5 format=3 uid="uid://ftkxu2e1u5iw"]
+
+[ext_resource type="PackedScene" uid="uid://pdwsvyopfw0s" path="res://GLB Models/Deagle/deagle.glb" id="1_yfcfm"]
+
+[sub_resource type="Animation" id="Animation_ywp40"]
+resource_name = "Idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.31, -0.22, -0.27), Vector3(0.31, -0.23, -0.27), Vector3(0.31, -0.22, -0.27)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:quaternion")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Quaternion(0, 0.976539, 0, 0.215339)]
+}
+
+[sub_resource type="Animation" id="Animation_aqq7x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:quaternion")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Quaternion(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lky7c"]
+_data = {
+"Idle": SubResource("Animation_ywp40"),
+"RESET": SubResource("Animation_aqq7x")
+}
+
+[node name="Deagle" type="Node3D"]
+rotation_edit_mode = 1
+
+[node name="deagle" parent="." instance=ExtResource("1_yfcfm")]
+transform = Transform3D(-4.35721e-09, 0, -0.0996814, 0, 0.0996814, 0, 0.0996814, 0, -4.35721e-09, 0, -0.136362, 0)
+
+[node name="Skeleton3D" parent="deagle/Armature" index="0"]
+bones/2/rotation = Quaternion(-9.53273e-08, -8.86384e-08, 0.707915, 0.706298)
+bones/3/rotation = Quaternion(-3.7276e-07, -6.36617e-08, 0.985728, -0.168347)
+bones/4/rotation = Quaternion(-3.76926e-07, -3.05003e-08, 0.996742, 0.0806548)
+bones/4/scale = Vector3(0.394424, 0.394424, 0.212653)
+bones/5/rotation = Quaternion(-5.7454e-07, 6.32703e-09, 0.999939, 0.0110117)
+bones/6/rotation = Quaternion(-5.73882e-07, 2.82132e-08, 0.998794, -0.0491028)
+bones/6/scale = Vector3(0.386561, 0.554013, 0.139201)
+
+[node name="the part the goes back" parent="deagle/Armature/Skeleton3D" index="0"]
+transform = Transform3D(0.388274, -0.0693791, 2.2564e-09, 0.0693791, 0.388274, -1.57656e-09, -3.60548e-09, 3.61473e-09, 0.212653, -0.124122, -0.197414, 8.9067e-06)
+
+[node name="trigger_2" parent="deagle/Armature/Skeleton3D" index="1"]
+transform = Transform3D(0.388274, -0.069379, 7.10543e-14, 0.0693791, 0.388274, 3.90799e-14, 2.84217e-14, -2.13163e-14, 0.212653, 0.679614, 1.12269, -4.80472e-08)
+
+[node name="Cube_001" parent="deagle/Armature/Skeleton3D" index="2"]
+transform = Transform3D(0.385439, -0.0421867, 4.26326e-14, 0.0294356, 0.552404, 6.66134e-15, -8.52651e-14, -1.42109e-14, 0.139201, 0.15554, -0.825518, 8.90849e-06)
+
+[node name="Cube_001" parent="deagle/Armature/Skeleton3D/Cube_001" index="0"]
+transform = Transform3D(1, 1.13603e-26, -2.71051e-20, 3.75432e-27, 1, -4.23516e-22, 0, 0, 1, -0.212208, 1.4669, 1.97724e-14)
+
+[node name="gun" parent="deagle/Armature/Skeleton3D" index="3"]
+transform = Transform3D(0.388274, -0.0693791, 0, 0.0693791, 0.388274, 0, 0, 0, 0.212653, -0.124122, -0.197414, 8.90848e-06)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lky7c")
+}
+
+[editable path="deagle"]

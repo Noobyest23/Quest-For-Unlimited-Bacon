@@ -16,6 +16,8 @@ func _ready():
 
 func _process(delta):
 	linear_velocity = -transform.basis.z * speed
+	linear_velocity = -transform.basis.y * drop
+	
 	var collisions = get_colliding_bodies()
 	if not collisions.is_empty():
 		for i in range(0, collisions.size()):

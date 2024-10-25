@@ -103,7 +103,6 @@ func _pluh(pitch : float = randf_range(0.8, 1.2)):
 	pluh.pitch_scale = pitch
 	pluh.play()
 
-
 func _get_next_walk_point() -> Vector3:
 	var point : Vector3 = Vector3.ZERO
 	

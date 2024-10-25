@@ -4,6 +4,58 @@
 [ext_resource type="PackedScene" uid="uid://pdwsvyopfw0s" path="res://GLB Models/Deagle/deagle.glb" id="1_yfcfm"]
 [ext_resource type="PackedScene" uid="uid://bbexngna3oj82" path="res://Scenes/bullet_projectile.tscn" id="2_3qfme"]
 
+[sub_resource type="Animation" id="Animation_o241n"]
+resource_name = "Fire"
+length = 0.30001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.31, -0.22, -0.27)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:quaternion")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Quaternion(0, 1, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("deagle/Armature/Skeleton3D/the part the goes back:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.275),
+"transitions": PackedFloat32Array(3.24901, 1.45434, 0.287175),
+"update": 0,
+"values": [Vector3(-0.124122, -0.197414, 9.29832e-06), Vector3(-1.00656, -0.355093, 1.04904e-05), Vector3(-0.124122, -0.197414, 9.29832e-06)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("deagle/Armature/Skeleton3D/trigger_2/trigger_2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.075),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-4.61989e-08, 1.44515e-08, -0.606327), Vector3(0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_ywp40"]
 resource_name = "Idle"
 length = 2.0
@@ -84,58 +136,6 @@ tracks/3/keys = {
 "values": [Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_o241n"]
-resource_name = "Fire"
-length = 0.30001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.31, -0.22, -0.27)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:quaternion")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Quaternion(0, 1, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("deagle/Armature/Skeleton3D/the part the goes back:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.275),
-"transitions": PackedFloat32Array(3.24901, 1.45434, 0.287175),
-"update": 0,
-"values": [Vector3(-0.124122, -0.197414, 9.29832e-06), Vector3(-1.00656, -0.355093, 1.04904e-05), Vector3(-0.124122, -0.197414, 9.29832e-06)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("deagle/Armature/Skeleton3D/trigger_2/trigger_2:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.025, 0.075),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-4.61989e-08, 1.44515e-08, -0.606327), Vector3(0, 0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lky7c"]
 _data = {
 "Fire": SubResource("Animation_o241n"),
@@ -165,9 +165,6 @@ transform = Transform3D(0.388274, -0.069379, 2.2564e-09, 0.0693791, 0.388274, -1
 
 [node name="trigger_2" parent="deagle/Armature/Skeleton3D" index="1"]
 transform = Transform3D(0.388274, -0.0693792, 4.40536e-13, 0.0693792, 0.388274, 1.35003e-13, -6.82121e-13, -7.10543e-14, 0.212653, 0.679614, 1.12269, -4.80472e-08)
-
-[node name="trigger_2" parent="deagle/Armature/Skeleton3D/trigger_2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Cube_001" parent="deagle/Armature/Skeleton3D" index="2"]
 transform = Transform3D(0.385439, -0.0421867, -4.26326e-14, 0.0294356, 0.552404, 6.66134e-15, 2.84217e-14, -3.55271e-14, 0.139201, 0.15554, -0.825518, 8.90849e-06)

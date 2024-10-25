@@ -10,72 +10,87 @@
 radius = 0.204911
 height = 1.20062
 
-[sub_resource type="Animation" id="Animation_b63do"]
-resource_name = "Walk"
+[sub_resource type="Animation" id="Animation_145rt"]
+resource_name = "Chase"
+length = 1.20001
 loop_mode = 1
 tracks/0/type = "rotation_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.010")
+tracks/0/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.007")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.978475, 0.207475, 0.000474975, 0.000474975, 0.5, 1, 0.954475, -0.297525, 0.000474975, -0.000525026, 1, 1, 0.978475, 0.207475, 0.000474975, 0.000474975)
+tracks/0/keys = PackedFloat32Array(0, 1, -0.576525, -0.816525, 0.012475, 0.017475, 0.6, 1, -0.407525, -0.454525, -0.562525, 0.557475, 1.2, 1, -0.576525, -0.816525, 0.012475, 0.017475)
 tracks/1/type = "rotation_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.012")
+tracks/1/path = NodePath("pluh guy/Armature/Skeleton3D:Bone")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, -0.979525, 0.200475, 0.000474975, 0.000474975, 0.5, 1, 0.980475, 0.198475, 0.000474975, -0.000525026, 1, 1, -0.979525, 0.200475, 0.000474975, 0.000474975)
+tracks/1/keys = PackedFloat32Array(0, 1, 0.052475, 0.000474975, 0.000474975, 0.998475, 0.2, 1, -0.061525, 0.000474975, 0.000474975, 0.998475, 0.4, 1, 0.052475, 0.000474975, 0.000474975, 0.998475, 0.6, 1, -0.061525, 0.000474975, 0.000474975, 0.998475, 0.8, 1, 0.052475, 0.000474975, 0.000474975, 0.998475, 1, 1, -0.061525, 0.000474975, 0.000474975, 0.998475, 1.2, 1, 0.052475, 0.000474975, 0.000474975, 0.998475)
 tracks/2/type = "rotation_3d"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.001")
-tracks/2/interp = 2
+tracks/2/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.012")
+tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, 0.000474975, 0.000474975, -0.152525, 0.988475, 0.5, 1, 0.000474975, -0.000525026, 0.313475, 0.949475, 1, 1, 0.000474975, 0.000474975, -0.152525, 0.988475)
+tracks/2/keys = PackedFloat32Array(0, 1, 0.97825, 0.207427, 0.000474865, -0.000524905, 0.2, 1, 0.863475, -0.504525, -0.000525026, -0.000525026, 0.4, 1, 0.978475, 0.207475, 0.000474975, -0.000525026, 0.6, 1, 0.863475, -0.504525, -0.000525026, -0.000525026, 0.8, 1, 0.978475, 0.207475, 0.000474975, -0.000525026, 1, 1, 0.863475, -0.504525, -0.000525026, -0.000525026, 1.2, 1, 0.978475, 0.207475, 0.000474975, -0.000525026)
 tracks/3/type = "rotation_3d"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.003")
+tracks/3/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.010")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, 0.000474975, 0.000474975, 0.000474975, 1.00048)
+tracks/3/keys = PackedFloat32Array(0, 1, 0.911475, -0.411525, 0.000474975, 0.000474975, 0.2, 1, -0.984525, -0.172525, 0.000474975, -0.000525026, 0.4, 1, 0.911475, -0.411525, 0.000474975, 0.000474975, 0.6, 1, -0.984525, -0.172525, 0.000474975, -0.000525026, 0.8, 1, 0.911475, -0.411525, 0.000474975, 0.000474975, 1, 1, -0.984525, -0.172525, 0.000474975, -0.000525026, 1.2, 1, 0.911475, -0.411525, 0.000474975, 0.000474975)
 tracks/4/type = "position_3d"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.002")
+tracks/4/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.012")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/keys = PackedFloat32Array(0, 1, 0.000474975, 1.13048, 0.000474975)
-tracks/5/type = "rotation_3d"
+tracks/4/keys = PackedFloat32Array(0, 1, 0, -0.306464, -0.517142)
+tracks/5/type = "position_3d"
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.002")
-tracks/5/interp = 1
+tracks/5/interp = 2
 tracks/5/loop_wrap = true
-tracks/5/keys = PackedFloat32Array(0, 1, 0, 1.42109e-14, 0, 1)
-tracks/6/type = "rotation_3d"
+tracks/5/keys = PackedFloat32Array(0, 1, 0, 1.13064, 0, 0.6, 1, 3.48548, 1.13048, 0.000474975, 1.2, 1, 0, 1.13064, 0)
+tracks/6/type = "method"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.004")
+tracks/6/path = NodePath(".")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/keys = PackedFloat32Array(0, 1, -0.979098, 0.000474768, 0.000474768, 0.203386)
+tracks/6/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_pluh"
+}]
+}
 tracks/7/type = "rotation_3d"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.007")
+tracks/7/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.004")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/keys = PackedFloat32Array(0, 1, 0.000474936, 0.220457, 0.975396, 0.000474936)
+tracks/7/keys = PackedFloat32Array(0, 1, -0.762525, -0.647525, 0.00547497, 0.00447497, 0.6, 1, -0.616525, -0.770525, 0.102475, 0.127475, 1.2, 1, -0.762525, -0.647525, 0.00547497, 0.00447497)
 tracks/8/type = "rotation_3d"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("pluh guy/Armature/Skeleton3D:Bone")
+tracks/8/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.003")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/keys = PackedFloat32Array(0, 1, 0.000474749, 0.000474749, 0.000474749, 1)
+tracks/8/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.5, 1, 0.329475, 0.000474975, 0.000474975, 0.944475, 0.6, 1, -0.426525, 0.000474975, 0.000474975, 0.904475, 0.7, 1, 0.329475, 0.000474975, 0.000474975, 0.944475)
+tracks/9/type = "rotation_3d"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.001")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat32Array(0, 1, 0, 1.19209e-07, 0, 1)
 
 [sub_resource type="Animation" id="Animation_k2nyo"]
 resource_name = "Idle"
@@ -214,87 +229,72 @@ tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
 
-[sub_resource type="Animation" id="Animation_145rt"]
-resource_name = "Chase"
-length = 1.20001
+[sub_resource type="Animation" id="Animation_b63do"]
+resource_name = "Walk"
 loop_mode = 1
 tracks/0/type = "rotation_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.007")
+tracks/0/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.010")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, -0.576525, -0.816525, 0.012475, 0.017475, 0.6, 1, -0.407525, -0.454525, -0.562525, 0.557475, 1.2, 1, -0.576525, -0.816525, 0.012475, 0.017475)
+tracks/0/keys = PackedFloat32Array(0, 1, 0.978475, 0.207475, 0.000474975, 0.000474975, 0.5, 1, 0.954475, -0.297525, 0.000474975, -0.000525026, 1, 1, 0.978475, 0.207475, 0.000474975, 0.000474975)
 tracks/1/type = "rotation_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("pluh guy/Armature/Skeleton3D:Bone")
+tracks/1/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.012")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0.052475, 0.000474975, 0.000474975, 0.998475, 0.2, 1, -0.061525, 0.000474975, 0.000474975, 0.998475, 0.4, 1, 0.052475, 0.000474975, 0.000474975, 0.998475, 0.6, 1, -0.061525, 0.000474975, 0.000474975, 0.998475, 0.8, 1, 0.052475, 0.000474975, 0.000474975, 0.998475, 1, 1, -0.061525, 0.000474975, 0.000474975, 0.998475, 1.2, 1, 0.052475, 0.000474975, 0.000474975, 0.998475)
+tracks/1/keys = PackedFloat32Array(0, 1, -0.979525, 0.200475, 0.000474975, 0.000474975, 0.5, 1, 0.980475, 0.198475, 0.000474975, -0.000525026, 1, 1, -0.979525, 0.200475, 0.000474975, 0.000474975)
 tracks/2/type = "rotation_3d"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.012")
-tracks/2/interp = 1
+tracks/2/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.001")
+tracks/2/interp = 2
 tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, 0.97825, 0.207427, 0.000474865, -0.000524905, 0.2, 1, 0.863475, -0.504525, -0.000525026, -0.000525026, 0.4, 1, 0.978475, 0.207475, 0.000474975, -0.000525026, 0.6, 1, 0.863475, -0.504525, -0.000525026, -0.000525026, 0.8, 1, 0.978475, 0.207475, 0.000474975, -0.000525026, 1, 1, 0.863475, -0.504525, -0.000525026, -0.000525026, 1.2, 1, 0.978475, 0.207475, 0.000474975, -0.000525026)
+tracks/2/keys = PackedFloat32Array(0, 1, 0.000474975, 0.000474975, -0.152525, 0.988475, 0.5, 1, 0.000474975, -0.000525026, 0.313475, 0.949475, 1, 1, 0.000474975, 0.000474975, -0.152525, 0.988475)
 tracks/3/type = "rotation_3d"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.010")
+tracks/3/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.003")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, 0.911475, -0.411525, 0.000474975, 0.000474975, 0.2, 1, -0.984525, -0.172525, 0.000474975, -0.000525026, 0.4, 1, 0.911475, -0.411525, 0.000474975, 0.000474975, 0.6, 1, -0.984525, -0.172525, 0.000474975, -0.000525026, 0.8, 1, 0.911475, -0.411525, 0.000474975, 0.000474975, 1, 1, -0.984525, -0.172525, 0.000474975, -0.000525026, 1.2, 1, 0.911475, -0.411525, 0.000474975, 0.000474975)
+tracks/3/keys = PackedFloat32Array(0, 1, 0.000474975, 0.000474975, 0.000474975, 1.00048)
 tracks/4/type = "position_3d"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.012")
+tracks/4/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.002")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/keys = PackedFloat32Array(0, 1, 0, -0.306464, -0.517142)
-tracks/5/type = "position_3d"
+tracks/4/keys = PackedFloat32Array(0, 1, 0.000474975, 1.13048, 0.000474975)
+tracks/5/type = "rotation_3d"
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.002")
-tracks/5/interp = 2
+tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/keys = PackedFloat32Array(0, 1, 0, 1.13064, 0, 0.6, 1, 3.48548, 1.13048, 0.000474975, 1.2, 1, 0, 1.13064, 0)
-tracks/6/type = "method"
+tracks/5/keys = PackedFloat32Array(0, 1, 0, 1.42109e-14, 0, 1)
+tracks/6/type = "rotation_3d"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath(".")
+tracks/6/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.004")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0.4),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"_pluh"
-}]
-}
+tracks/6/keys = PackedFloat32Array(0, 1, -0.979098, 0.000474768, 0.000474768, 0.203386)
 tracks/7/type = "rotation_3d"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.004")
+tracks/7/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.007")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/keys = PackedFloat32Array(0, 1, -0.762525, -0.647525, 0.00547497, 0.00447497, 0.6, 1, -0.616525, -0.770525, 0.102475, 0.127475, 1.2, 1, -0.762525, -0.647525, 0.00547497, 0.00447497)
+tracks/7/keys = PackedFloat32Array(0, 1, 0.000474936, 0.220457, 0.975396, 0.000474936)
 tracks/8/type = "rotation_3d"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.003")
+tracks/8/path = NodePath("pluh guy/Armature/Skeleton3D:Bone")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.5, 1, 0.329475, 0.000474975, 0.000474975, 0.944475, 0.6, 1, -0.426525, 0.000474975, 0.000474975, 0.904475, 0.7, 1, 0.329475, 0.000474975, 0.000474975, 0.944475)
-tracks/9/type = "rotation_3d"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.001")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = PackedFloat32Array(0, 1, 0, 1.19209e-07, 0, 1)
+tracks/8/keys = PackedFloat32Array(0, 1, 0.000474749, 0.000474749, 0.000474749, 1)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tva3d"]
 _data = {
@@ -316,15 +316,13 @@ shape = SubResource("CapsuleShape3D_1bnl5")
 transform = Transform3D(0.172293, 0, 0, 0, 0.172293, 0, 0, 0, 0.172293, 0, 0, 0)
 
 [node name="Skeleton3D" parent="pluh guy/Armature" index="0"]
-bones/0/rotation = Quaternion(0.000474749, 0.000474749, 0.000474749, 1)
+bones/0/rotation = Quaternion(0.000474747, 0.000474747, 0.000474747, 1)
 bones/2/position = Vector3(0.000474975, 1.13048, 0.000474975)
 bones/3/position = Vector3(0.000474975, 0.877475, 0.000474975)
-bones/3/scale = Vector3(1, 1, 1)
 bones/4/rotation = Quaternion(-0.968148, 0.00047479, 0.00047479, 0.250378)
-bones/7/rotation = Quaternion(0.000474936, 0.220457, 0.975396, 0.000474936)
-bones/7/scale = Vector3(1, 1, 1)
+bones/7/rotation = Quaternion(0.000474937, 0.220457, 0.975396, 0.000474937)
 bones/10/rotation = Quaternion(0.999371, -0.0354729, -1.3409e-08, 6.61081e-08)
-bones/13/rotation = Quaternion(0.99937, -0.0354695, 0.000524944, 0.000524944)
+bones/13/rotation = Quaternion(0.99937, -0.0354695, 0.000524945, 0.000524945)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

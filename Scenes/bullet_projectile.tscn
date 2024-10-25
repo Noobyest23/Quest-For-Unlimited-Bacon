@@ -20,6 +20,9 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.342105, 0.406593), -1.93878, -
 point_count = 3
 
 [node name="BulletProjectile" type="RigidBody3D"]
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 physics_material_override = SubResource("PhysicsMaterial_rauh4")
 gravity_scale = 0.0
 can_sleep = false
@@ -43,7 +46,7 @@ curve = SubResource("Curve_y4blr")
 geometry_nodepath = NodePath("../bulletproj")
 num_points = 10
 noise_scale = 0.5
-size = 0.3
+size = 0.05
 
 [node name="LifeTime" type="Timer" parent="."]
 wait_time = 20.0

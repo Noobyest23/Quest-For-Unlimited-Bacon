@@ -2,7 +2,8 @@
 
 [resource]
 resource_name = "Material.002"
-cull_mode = 2
+render_priority = 1
+no_depth_test = true
 albedo_color = Color(0.827948, 0.829207, 0.339134, 1)
 roughness = 0.45
 emission_enabled = true

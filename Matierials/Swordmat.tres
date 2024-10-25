@@ -4,7 +4,8 @@
 
 [resource]
 resource_name = "Material.001"
-cull_mode = 2
+depth_draw_mode = 2
+no_depth_test = true
 albedo_texture = ExtResource("1_n67jg")
 roughness = 0.154545
 texture_filter = 2

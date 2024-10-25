@@ -57,7 +57,7 @@ func _on_area_3d_body_entered(body):
 		_impact(0.05, 0.4)
 		var inst = particles.instantiate()
 		trail.add_child(inst)
-		if body is RigidBody3D:
+		if body is RigidBody3D or body is PhysicalBone3D:
 			body.apply_impulse(attackingDirection)
 		isAttacking = false
 	

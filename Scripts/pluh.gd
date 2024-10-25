@@ -17,6 +17,7 @@ const JUMP_VELOCITY = 4.5
 
 @export var maxNewPointDistance : float = 15.0
 @export var stopChaseDistance : float = 15.0
+@export var punchDamage : float = 8.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 9.8
@@ -114,3 +115,7 @@ func _get_next_walk_point() -> Vector3:
 
 func _enterChase():
 	state = STATE_CHASING
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body is playerClass and not body.sword.isBlocking:
+		body.damageable._damage(punchDamage)

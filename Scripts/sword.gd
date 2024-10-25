@@ -51,18 +51,27 @@ func _on_area_3d_body_entered(body):
 	#Damage the body if its an attack
 	if body is playerClass:
 		return
+	
 	if body.has_node("Damageable") and isAttacking:
 		body.get_node("Damageable")._damage(damage)
 		_impact(0.05, 0.4)
 		var inst = particles.instantiate()
-		body.add_child(inst)
+		trail.add_child(inst)
 		if body is RigidBody3D:
 			body.apply_impulse(attackingDirection)
+		isAttacking = false
+	
+	#if not body is Projectile and not body.has_node("Damageable") and isAttacking:
+		#anim_player.play("Idle")
+		#var inst = particles.instantiate()
+		#trail.add_child(inst)
+		
 	#Destroy Projectiles if blocking
-	if isBlocking and not parryTimer.is_stopped():
-		body.queue_free()
-		_impact(0.05, 0.5)
-	elif isBlocking:
+	if isBlocking and not parryTimer.is_stopped() and body is Projectile:
+		body.look_at(get_parent().get_node("Deagle/target").global_position)
+		body.speed *= 1.5
+		_impact(0.05, 0.6)
+	elif isBlocking and body is Projectile:
 		body.queue_free()
 
 func _impact(timeScale : float, duration : float):

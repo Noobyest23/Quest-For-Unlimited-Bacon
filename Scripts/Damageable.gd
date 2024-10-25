@@ -14,8 +14,12 @@ var darkRedPart = null
 var healthLabel = null
 
 var health : float = 0.0
+var barSize : float = 0.0
 
 @onready var parent = get_parent()
+@onready var player = get_parent().get_parent().get_child(0)
+
+signal damageTaken
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -35,6 +39,8 @@ func _ready():
 			$PlayerUIMode.queue_free()
 	
 	
+	
+	
 	call_deferred("_updateHealthBar")
 
 func _updateHealthBar():
@@ -47,21 +53,14 @@ func _updateHealthBar():
 		percantage = 0.0
 	var maxSize : float = 245.0
 	#change the size of the rect relative to the percantage
-	var barSize : float = percantage * maxSize
+	barSize = percantage * maxSize
 	var redTween = create_tween()
 	var darkRedTween = create_tween()
 	
-	if barSize < 32:
+	if barSize < 1:
 		redPart.visible = false
 		darkRedPart.visible = false
 		return
-	
-	if redPart is TextureRect:
-		redTween.tween_property(redPart, "size", Vector2(barSize, 36), 0.2)
-		darkRedTween.tween_property(darkRedPart, "size", Vector2(barSize, 36), 0.4)
-	else:
-		redTween.tween_property(redPart, "texture:width", barSize, 0.2)
-		darkRedTween.tween_property(darkRedPart, "texture:width", barSize, 0.4)
 
 func _damage(damage : float):
 	health -= damage
@@ -70,6 +69,7 @@ func _damage(damage : float):
 	if health <= 0:
 		_death()
 	
+	damageTaken.emit()
 	_updateHealthBar()
 
 func _death():
@@ -83,7 +83,22 @@ func _death():
 		get_tree().reload_current_scene()
 
 func _process(delta):
-	if HealthBarType == 1:
-		floating_handler.global_position.x = global_position.x
-		floating_handler.global_position.y = global_position.y + floatingDist
-		floating_handler.global_position.z = global_position.z
+	match HealthBarType:
+		1:
+			floating_handler.global_position.x = global_position.x
+			floating_handler.global_position.y = global_position.y + floatingDist
+			floating_handler.global_position.z = global_position.z
+			
+			if global_position.distance_to(player.global_position) > 7:
+				floating_handler.visible = false
+			else:
+				floating_handler.visible = true
+	
+	if redPart is TextureRect:
+		redPart.size = lerp(redPart.size, Vector2(barSize, 36.0), 4.0 * delta)
+		darkRedPart.size = lerp(darkRedPart.size, Vector2(barSize, 36.0), 2.0 * delta)
+	else:
+		redPart.texture.width = lerp(float(redPart.texture.width), barSize, 4.0 * delta)
+		darkRedPart.texture.width = lerp(float(darkRedPart.texture.width), barSize, 2.0 * delta)
+	
+	

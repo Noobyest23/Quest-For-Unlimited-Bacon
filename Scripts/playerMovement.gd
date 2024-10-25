@@ -5,6 +5,9 @@ class_name playerClass
 @onready var collisionShape : CollisionShape3D = $CollisionShape3D
 @onready var camera : cameraMovement = $MeshInstance3D/Camera3D
 
+@onready var sword : Sword = $MeshInstance3D/Camera3D/Sword
+@onready var gun : Gun = $MeshInstance3D/Camera3D/Deagle
+
 const WALK_SPEED = 7.0
 const CROUCH_SPEED = 3.0
 const WALLRUN_SPEED = 10.0
@@ -117,7 +120,6 @@ func _physics_process(delta):
 	for i in get_slide_collision_count():
 		var c = get_slide_collision(i)
 		if c.get_collider() is RigidBody3D:
-			print(push_force)
 			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
 
 func _input(event):
@@ -142,9 +144,12 @@ func _input(event):
 			_endCrouch()
 		elif event.is_action_pressed("Equip Sword"):
 			if get_node("MeshInstance3D/Camera3D/Sword"):
-				var v = $MeshInstance3D/Camera3D/Sword.visible
-				
-				$MeshInstance3D/Camera3D/Sword.visible = not v
+				sword.visible = not sword.visible
+				gun.visible = false
+		elif event.is_action_pressed("Equip Gun"):
+			if get_node("MeshInstance3D/Camera3D/Deagle"):
+				gun.visible = not gun.visible
+				sword.visible = false
 
 func _startCrouch() -> void:
 	if is_on_floor():

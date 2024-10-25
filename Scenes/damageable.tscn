@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bbsfhdkde8i5c"]
+[gd_scene load_steps=14 format=3 uid="uid://bbsfhdkde8i5c"]
 
 [ext_resource type="Script" path="res://Scripts/Damageable.gd" id="1_6qmaf"]
 
@@ -29,6 +29,22 @@ width = 260
 curve_x = SubResource("Curve_xm230")
 curve_y = SubResource("Curve_ny4kx")
 curve_z = SubResource("Curve_qof66")
+
+[sub_resource type="Curve" id="Curve_vg17c"]
+_data = [Vector2(0, 0.296703), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_dvjvb"]
+width = 32
+curve_x = SubResource("Curve_vg17c")
+
+[sub_resource type="Curve" id="Curve_f3ebf"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_3qpnq"]
+width = 32
+curve_x = SubResource("Curve_f3ebf")
 
 [node name="Damageable" type="Node3D"]
 script = ExtResource("1_6qmaf")
@@ -82,12 +98,12 @@ texture = SubResource("CurveXYZTexture_tuqk8")
 transform = Transform3D(0.661995, 0, 0, 0, 23.1424, 0, 0, 0, 1, 0, 0, 0)
 modulate = Color(1, 1, 1, 0.678431)
 billboard = 2
-texture = SubResource("CurveXYZTexture_f78a8")
+texture = SubResource("CurveXYZTexture_dvjvb")
 
 [node name="redBat" type="Sprite3D" parent="FloatingMode"]
 transform = Transform3D(0.661995, 0, 0, 0, 23.1424, 0, 0, 0, 1, 0, 0, 0)
 billboard = 2
-texture = SubResource("CurveXYZTexture_s8nnj")
+texture = SubResource("CurveXYZTexture_3qpnq")
 
 [node name="Label3D" type="Label3D" parent="FloatingMode"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.312, 0)

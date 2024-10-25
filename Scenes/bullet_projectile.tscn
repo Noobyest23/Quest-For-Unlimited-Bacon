@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://bbexngna3oj82"]
+
+[ext_resource type="Script" path="res://BulletProjectile.gd" id="1_h5ufk"]
+[ext_resource type="PackedScene" uid="uid://pquttghs83ty" path="res://GLB Models/Bullet/bulletproj.glb" id="2_md1et"]
+[ext_resource type="PackedScene" uid="uid://cyj02mb48netv" path="res://Effects/bullet_impact.tscn" id="2_p81ph"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rauh4"]
+rough = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0x461"]
+size = Vector3(0.0655826, 0.0672152, 0.0866113)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5uioo"]
+albedo_color = Color(0.637427, 0, 0.0616277, 1)
+emission_enabled = true
+emission = Color(1, 0.3241, 0.258944, 1)
+
+[sub_resource type="Curve" id="Curve_y4blr"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.342105, 0.406593), -1.93878, -1.93878, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="BulletProjectile" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_rauh4")
+gravity_scale = 0.0
+can_sleep = false
+continuous_cd = true
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_h5ufk")
+speed = 32.0
+impactFx = ExtResource("2_p81ph")
+
+[node name="bulletproj" parent="." instance=ExtResource("2_md1et")]
+transform = Transform3D(0.1215, 0, 0, 0, -5.31093e-09, 0.1215, 0, -0.1215, -5.31093e-09, 0, 0, 0.0612105)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000352632, 0.00309544, 0.0289964)
+shape = SubResource("BoxShape3D_0x461")
+
+[node name="TrailEmitter" type="TrailEmitter" parent="."]
+material = SubResource("StandardMaterial3D_5uioo")
+curve = SubResource("Curve_y4blr")
+geometry_nodepath = NodePath("../bulletproj")
+num_points = 10
+noise_scale = 0.5
+size = 0.3
+
+[node name="LifeTime" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="LifeTime" to="." method="_on_life_time_timeout"]

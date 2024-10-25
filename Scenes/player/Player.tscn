@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://7673fyj885xx"]
+[gd_scene load_steps=16 format=3 uid="uid://7673fyj885xx"]
 
 [ext_resource type="Script" path="res://Scripts/playerCamMovement.gd" id="1_qvgn8"]
 [ext_resource type="Script" path="res://Scripts/playerMovement.gd" id="1_vxgf0"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ftkxu2e1u5iw" path="res://Scenes/player/deagle.tscn" id="5_32r0h"]
 [ext_resource type="PackedScene" uid="uid://bbsfhdkde8i5c" path="res://Scenes/damageable.tscn" id="5_prewj"]
 [ext_resource type="Material" uid="uid://b12egxkxv4pkn" path="res://Matierials/swordemision.tres" id="5_xpy3w"]
+[ext_resource type="Texture2D" uid="uid://ckqyww104bhie" path="res://Textures/crosshair125.png" id="7_hexyx"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_t3hn0"]
 radius = 0.195
@@ -115,7 +116,7 @@ fov = 91.0
 script = ExtResource("1_qvgn8")
 
 [node name="Sword" parent="MeshInstance3D/Camera3D" instance=ExtResource("4_2pcc7")]
-transform = Transform3D(-0.150681, 0.961482, 0.229885, 0.987719, 0.156145, -0.00565703, -0.0413344, 0.226209, -0.973203, 0, 0, 0)
+transform = Transform3D(-0.150681, 0.961482, 0.229885, 0.98772, 0.156145, -0.00565703, -0.0413344, 0.226209, -0.973204, 0, 0, 0)
 visible = false
 
 [node name="Cylinder_003" parent="MeshInstance3D/Camera3D/Sword/swordblend/Armature/Skeleton3D/Cylinder_003" index="0"]
@@ -129,10 +130,16 @@ mesh = SubResource("ArrayMesh_mqrrs")
 [node name="AnimationPlayer" parent="MeshInstance3D/Camera3D/Sword" index="1"]
 autoplay = "Idle"
 
-[node name="Deagle" parent="MeshInstance3D/Camera3D" instance=ExtResource("5_32r0h")]
+[node name="Deagle" parent="MeshInstance3D/Camera3D" node_paths=PackedStringArray("raycast") instance=ExtResource("5_32r0h")]
+raycast = NodePath("../RayCast3D")
 
 [node name="AnimationPlayer" parent="MeshInstance3D/Camera3D/Deagle" index="1"]
 autoplay = "Idle"
+
+[node name="RayCast3D" type="RayCast3D" parent="MeshInstance3D/Camera3D"]
+target_position = Vector3(0, 0, -100)
+
+[node name="AudioListener3D" type="AudioListener3D" parent="MeshInstance3D/Camera3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.297735, 0)
@@ -141,6 +148,36 @@ shape = SubResource("CapsuleShape3D_t6klo")
 [node name="Damageable" parent="." instance=ExtResource("5_prewj")]
 maxHealth = 20.0
 HealthBarType = 0
+
+[node name="Crosshair" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Crosshair"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_hexyx")
+expand_mode = 1
 
 [editable path="MeshInstance3D/Camera3D/Sword"]
 [editable path="MeshInstance3D/Camera3D/Sword/swordblend"]

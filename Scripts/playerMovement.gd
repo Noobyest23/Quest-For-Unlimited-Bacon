@@ -5,8 +5,8 @@ class_name playerClass
 @onready var collisionShape : CollisionShape3D = $CollisionShape3D
 @onready var camera : cameraMovement = $MeshInstance3D/Camera3D
 
-@onready var sword : Sword = $MeshInstance3D/Camera3D/Sword
-@onready var gun : Gun = $MeshInstance3D/Camera3D/Deagle
+@onready var sword : Sword = $MeshInstance3D/Camera3D/WeaponManager/Sword
+@onready var gun : Gun = $MeshInstance3D/Camera3D/WeaponManager/Deagle
 
 const WALK_SPEED = 7.0
 const CROUCH_SPEED = 3.0
@@ -142,14 +142,6 @@ func _input(event):
 			_startSlide()
 		elif event.is_action_released("Crouch"):
 			_endCrouch()
-		elif event.is_action_pressed("Equip Sword"):
-			if get_node("MeshInstance3D/Camera3D/Sword"):
-				sword.visible = not sword.visible
-				gun.visible = false
-		elif event.is_action_pressed("Equip Gun"):
-			if get_node("MeshInstance3D/Camera3D/Deagle"):
-				gun.visible = not gun.visible
-				sword.visible = false
 
 func _startCrouch() -> void:
 	if is_on_floor():

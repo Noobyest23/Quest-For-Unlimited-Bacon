@@ -37,6 +37,9 @@ func _ready():
 			healthLabel = $FloatingMode/Label3D
 			floating_handler = $FloatingMode
 			$PlayerUIMode.queue_free()
+		3: #none
+			$FloatingMode.queue_free()
+			$PlayerUIMode.queue_free()
 	
 	
 	

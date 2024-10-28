@@ -362,7 +362,7 @@ stream = ExtResource("3_6ga04")
 max_polyphony = 3
 
 [node name="Damageable" parent="." instance=ExtResource("4_kh4y2")]
-maxHealth = 50.0
+maxHealth = 14.0
 customDeathEffect = ExtResource("5_8mlfm")
 
 [node name="IdleTimer" type="Timer" parent="."]

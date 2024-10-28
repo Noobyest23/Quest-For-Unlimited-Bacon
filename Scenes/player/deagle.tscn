@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://ftkxu2e1u5iw"]
 
-[ext_resource type="Script" path="res://Scripts/gun.gd" id="1_4ib7b"]
+[ext_resource type="Script" path="res://Scripts/weaponClasses/gun.gd" id="1_4ib7b"]
 [ext_resource type="PackedScene" uid="uid://pdwsvyopfw0s" path="res://GLB Models/Deagle/deagle.glb" id="1_yfcfm"]
 [ext_resource type="PackedScene" uid="uid://bbexngna3oj82" path="res://Scenes/bullet_projectile.tscn" id="2_3qfme"]
 
@@ -14,10 +14,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.0666667, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0.31, -0.22, -0.27)]
+"values": [Vector3(0.31, -0.22, -0.27), Vector3(0.31, -0.116896, -0.191346), Vector3(0.31, -0.22, -0.27)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -26,10 +26,10 @@ tracks/1/path = NodePath(".:quaternion")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.0666667, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Quaternion(0, 1, 0, 0)]
+"values": [Quaternion(0, 1, 0, 0), Quaternion(0, 0.968296, 0.249805, 0), Quaternion(0, 1, 0, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -185,6 +185,6 @@ playback_default_blend_time = 0.2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0264761, 0.109287, 0.388204)
 
 [node name="target" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.328661, 0.109287, 4.81893)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.130911, 0.109287, 4.81893)
 
 [editable path="deagle"]

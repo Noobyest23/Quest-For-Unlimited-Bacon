@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=4 uid="uid://c0srd8cm5ainn"]
 
-[ext_resource type="Script" path="res://Scripts/sword.gd" id="1_ntdgf"]
+[ext_resource type="Script" path="res://Scripts/weaponClasses/sword.gd" id="1_ntdgf"]
 [ext_resource type="PackedScene" uid="uid://c1u651cbmp05h" path="res://GLB Models/Sword/swordblend.glb" id="2_dagpt"]
-[ext_resource type="Material" uid="uid://b12egxkxv4pkn" path="res://Matierials/swordemision.tres" id="3_tryud"]
+[ext_resource type="Material" uid="uid://b12egxkxv4pkn" path="res://swordemision.tres" id="3_tryud"]
 [ext_resource type="Material" uid="uid://cupa00eyv4ror" path="res://Matierials/Swordmat.tres" id="3_vk380"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_72vvd"]
@@ -191,6 +191,7 @@ size = Vector3(0.0710449, 1.07618, 0.234493)
 transform = Transform3D(-0.150681, 0.961482, 0.229884, 0.987718, 0.156145, -0.00565701, -0.0413344, 0.226209, -0.973201, 0, 0, 0)
 rotation_edit_mode = 1
 script = ExtResource("1_ntdgf")
+damage = 7.0
 
 [node name="swordblend" parent="." instance=ExtResource("2_dagpt")]
 transform = Transform3D(0.28, 0, 0, 0, 0.28, 0, 0, 0, 0.28, 0, 0, 0)

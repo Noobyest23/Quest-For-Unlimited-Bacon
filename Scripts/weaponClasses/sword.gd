@@ -1,11 +1,9 @@
-extends Node3D
+extends weaponClass
 
 class_name Sword
 
 @onready var player = get_parent().get_parent().get_parent()
-@onready var worldEnv : WorldEnvironment = player.get_parent().get_child(1)
 
-var damage = 7
 var isAttacking : bool = false
 var isBlocking : bool = false
 var attackingDirection : Vector3 = Vector3(0, 0, 0)
@@ -19,7 +17,7 @@ signal endBlock
 var particles : PackedScene = preload("res://Effects/collection_explosion.tscn")
 
 func _input(event):
-	if visible == false:
+	if equipped == false:
 		return
 	if event.is_action_pressed("WeaponMain"):
 		_slash()

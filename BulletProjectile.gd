@@ -11,7 +11,7 @@ class_name Projectile
 var target = Vector3(0, 0, 0)
 
 func _ready():
-	reparent(get_parent().get_parent().get_parent().get_parent().get_parent().get_parent())
+	reparent(get_parent().get_parent().get_parent().get_parent().get_parent().get_parent().get_parent())
 	look_at(target)
 
 func _process(delta):

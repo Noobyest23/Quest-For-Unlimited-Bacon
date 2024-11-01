@@ -14,10 +14,12 @@ const JUMP_VELOCITY = 4.5
 @onready var playerSeek : RayCast3D = $PlayerSeek
 @onready var damageable : Damageable = $Damageable
 @onready var navAgent : NavigationAgent3D = $NavigationAgent3D
+@onready var dance_anim_player : AnimationPlayer = $"pluh guy/AnimationPlayer"
 
 @export var maxNewPointDistance : float = 15.0
 @export var stopChaseDistance : float = 15.0
 @export var punchDamage : float = 8.0
+@export var forceDance : bool = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 9.8
@@ -26,6 +28,7 @@ var gravity = 9.8
 const STATE_IDLE = 0
 const STATE_WALKING = 1
 const STATE_CHASING = 2
+const STATE_DANCE = 3
 
 
 var state = STATE_IDLE
@@ -41,9 +44,14 @@ var weapon = WEAPON.melee
 func _ready():
 	damageable.damageTaken.connect(_enterChase)
 	damageable.damageTaken.connect(_pluh.bind(1.5))
+	var rng = randi_range(1, 100)
+	if rng == 1:
+		forceDance = true
 
 func _physics_process(delta):
 	# Add the gravity.
+	if forceDance:
+		state = STATE_DANCE
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	else:
@@ -85,6 +93,10 @@ func _physics_process(delta):
 			rotation.z = 0.0
 			if global_position.distance_to(player.global_position) > stopChaseDistance:
 				state = STATE_IDLE
+		STATE_DANCE:
+			anim_player.active = false
+			dance_anim_player.active = true
+			dance_anim_player.play("mixamo_com")
 	
 	direction = direction.normalized()
 	

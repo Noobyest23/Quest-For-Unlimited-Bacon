@@ -12,3 +12,4 @@ func _on_area_3d_body_entered(body):
 		await paricleIsnt.smokeEmitter.finished
 		
 		queue_free()
+		player.damageable._damage(-5.0)

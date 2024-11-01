@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://corb53sqky7pb"]
+
+[ext_resource type="Script" path="res://Scripts/thequestion.gd" id="1_k2l81"]
+
+[sub_resource type="Gradient" id="Gradient_rrb3u"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ap5l8"]
+gradient = SubResource("Gradient_rrb3u")
+
+[node name="StartScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_k2l81")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.954
+anchor_top = -0.795
+offset_left = 25.16
+offset_top = 18.8
+offset_right = 1613.0
+offset_bottom = 912.0
+texture = SubResource("GradientTexture2D_ap5l8")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 218.0
+offset_right = 991.0
+offset_bottom = 241.0
+scale = Vector2(1.5, 1.5)
+text = "Would You rather Have unlimited bacon but no more games, or games... UNLIMITED GAMES, but no more games?"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 314.0
+offset_right = 507.0
+offset_bottom = 345.0
+scale = Vector2(3, 3)
+text = "Unlimited Bacon but no more games"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 460.0
+offset_right = 596.0
+offset_bottom = 491.0
+scale = Vector2(3, 3)
+text = "Games... UNLIMITED GAMES but no more games"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

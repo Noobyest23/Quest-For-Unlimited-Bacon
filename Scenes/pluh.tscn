@@ -1,14 +1,48 @@
-[gd_scene load_steps=13 format=3 uid="uid://bto0ijb2oui6v"]
+[gd_scene load_steps=16 format=3 uid="uid://bto0ijb2oui6v"]
 
 [ext_resource type="Script" path="res://Scripts/pluh.gd" id="1_i2ujr"]
 [ext_resource type="PackedScene" uid="uid://crf2elw6da52l" path="res://GLB Models/pluh/pluh guy.glb" id="1_mf1b4"]
 [ext_resource type="AudioStream" uid="uid://cuvd0sh7nemwd" path="res://sounds/pluh.mp3" id="3_6ga04"]
+[ext_resource type="Animation" uid="uid://d4k2ulhl23tyl" path="res://GLB Models/pluh/mixamo_com.res" id="3_j4dpf"]
 [ext_resource type="PackedScene" uid="uid://bbsfhdkde8i5c" path="res://Scenes/damageable.tscn" id="4_kh4y2"]
 [ext_resource type="PackedScene" uid="uid://c7d7rqmhj7ktx" path="res://Effects/puppet.tscn" id="5_8mlfm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1bnl5"]
 radius = 0.204911
 height = 1.20062
+
+[sub_resource type="Animation" id="Animation_vfp3c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(7.04914e-08, 0, -0.537553)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.31134e-07, -1.5708, -1.5708)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2bvbv"]
+_data = {
+"RESET": SubResource("Animation_vfp3c"),
+"mixamo_com": ExtResource("3_j4dpf")
+}
 
 [sub_resource type="Animation" id="Animation_145rt"]
 resource_name = "Chase"
@@ -181,6 +215,13 @@ tracks/9/path = NodePath("pluh guy/Armature/Skeleton3D:Bone")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = PackedFloat32Array(0, 1, 0.000474975, 0.000474975, 0.000474975, 1.00048)
+tracks/10/type = "rotation_3d"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.008")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = PackedFloat32Array(0, 1, -0.0705445, 0.945017, -0.144641, 0.284684)
 
 [sub_resource type="Animation" id="Animation_q7ah5"]
 length = 0.001
@@ -252,6 +293,55 @@ tracks/8/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/9/type = "rotation_3d"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.006")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat32Array(0, 1, 0.000474975, 0.000474975, 0.000474975, 1.00048)
+tracks/10/type = "rotation_3d"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.005")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = PackedFloat32Array(0, 1, -0.114172, 0.295702, -0.0983715, 0.943318)
+tracks/11/type = "rotation_3d"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.008")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = PackedFloat32Array(0, 1, -0.239872, 0.939402, -0.088247, 0.228469)
+tracks/12/type = "rotation_3d"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.009")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = PackedFloat32Array(0, 1, 0.000474975, 0.000474975, 0.000474975, 1.00048)
+tracks/13/type = "rotation_3d"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.014")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = PackedFloat32Array(0, 1, 0.00156609, -0.000845342, -0.747156, 0.664646)
+tracks/14/type = "rotation_3d"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.013")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = PackedFloat32Array(0, 1, 0.000474975, 0.000474975, 0.000474975, 1.00048)
+tracks/15/type = "rotation_3d"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.015")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = PackedFloat32Array(0, 1, -0.0365189, 0.0417505, -0.781549, 0.621373)
 
 [sub_resource type="Animation" id="Animation_b63do"]
 resource_name = "Walk"
@@ -319,6 +409,55 @@ tracks/8/path = NodePath("pluh guy/Armature/Skeleton3D:Bone")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = PackedFloat32Array(0, 1, 0.000474749, 0.000474749, 0.000474749, 1)
+tracks/9/type = "rotation_3d"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.006")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat32Array(0, 1, 0.000474975, 0.000474975, 0.000474975, 1.00048)
+tracks/10/type = "rotation_3d"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.005")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = PackedFloat32Array(0, 1, -0.165229, 0.0487544, -0.0200363, 0.984846)
+tracks/11/type = "rotation_3d"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.008")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = PackedFloat32Array(0, 1, -0.239872, 0.939402, -0.088247, 0.228469)
+tracks/12/type = "rotation_3d"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.009")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = PackedFloat32Array(0, 1, 0.000474975, 0.000474975, 0.000474975, 1.00048)
+tracks/13/type = "rotation_3d"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.014")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = PackedFloat32Array(0, 1, 0.00156609, -0.000845342, -0.747156, 0.664646)
+tracks/14/type = "rotation_3d"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.013")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = PackedFloat32Array(0, 1, 0.000474975, 0.000474975, 0.000474975, 1.00048)
+tracks/15/type = "rotation_3d"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("pluh guy/Armature/Skeleton3D:Bone.015")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = PackedFloat32Array(0, 1, -0.0365189, 0.0417505, -0.781549, 0.621373)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tva3d"]
 _data = {
@@ -340,16 +479,43 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.161664, 0)
 shape = SubResource("CapsuleShape3D_1bnl5")
 
 [node name="pluh guy" parent="." instance=ExtResource("1_mf1b4")]
-transform = Transform3D(0.172293, 0, 0, 0, 0.172293, 0, 0, 0, 0.172293, 0, 0, 0)
+transform = Transform3D(0.172293, 0, 0, 0, 0.172293, 0, 0, 0, 0.172293, 1.40651e-09, -0.689809, -0.0107257)
+
+[node name="Armature" parent="pluh guy" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0109957, 2.86139, 0.0168376)
 
 [node name="Skeleton3D" parent="pluh guy/Armature" index="0"]
 bones/0/rotation = Quaternion(0.000474747, 0.000474747, 0.000474747, 1)
-bones/1/rotation = Quaternion(0, 1.19209e-07, 0, 1)
 bones/2/position = Vector3(0.000474975, 1.13048, 0.000474975)
 bones/4/rotation = Quaternion(-0.968148, 0.00047479, 0.00047479, 0.250378)
+bones/5/position = Vector3(1.18999e-07, 1, 1.08228e-07)
+bones/5/rotation = Quaternion(-0.114172, 0.295702, -0.0983715, 0.943318)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/position = Vector3(-4.66882e-08, 1.30391, 8.67627e-08)
+bones/6/rotation = Quaternion(0.000474747, 0.000474749, 0.000474743, 1)
+bones/6/scale = Vector3(1, 1, 1)
 bones/7/rotation = Quaternion(0.000474937, 0.220457, 0.975396, 0.000474937)
-bones/13/position = Vector3(0, -0.306464, -0.517142)
+bones/8/position = Vector3(-1.28689e-07, 1, -3.1798e-07)
+bones/8/rotation = Quaternion(-0.239872, 0.939402, -0.088247, 0.228469)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/rotation = Quaternion(0.000474749, 0.000474749, 0.000474749, 1)
+bones/11/rotation = Quaternion(0.000474975, 0.000474975, 0.000474975, 1.00048)
+bones/12/position = Vector3(3.71862e-07, 1.62398, -4.07869e-08)
+bones/12/rotation = Quaternion(0.00156609, -0.000845342, -0.747156, 0.664647)
+bones/12/scale = Vector3(1.00001, 0.999992, 0.999999)
 bones/13/rotation = Quaternion(0.99937, -0.0354695, 0.000524945, 0.000524945)
+bones/14/position = Vector3(-1.91962e-08, 1.34361, -1.36097e-09)
+bones/14/rotation = Quaternion(0.000474749, 0.000474749, 0.000474756, 1)
+bones/14/scale = Vector3(0.999995, 1.00001, 1)
+bones/15/position = Vector3(1.39375e-07, 1.62398, -1.04454e-08)
+bones/15/rotation = Quaternion(-0.0365189, 0.0417505, -0.781549, 0.621373)
+bones/15/scale = Vector3(1, 1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="pluh guy"]
+active = false
+libraries = {
+"": SubResource("AnimationLibrary_2bvbv")
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
